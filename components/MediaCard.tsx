@@ -5,10 +5,9 @@ import { useState } from 'react';
 
 interface MediaCardProps {
   filename: string;
-  index: number;
 }
 
-export default function MediaCard({ filename, index }: MediaCardProps) {
+export default function MediaCard({ filename }: MediaCardProps) {
   const isVideo = filename.endsWith('.mp4');
   const [isPlaying, setIsPlaying] = useState(false);
 

@@ -189,8 +189,8 @@ export default function Home() {
             </div>
 
             {/* All Media - Photos & Videos */}
-            {mediaFiles.map((filename, index) => (
-              <MediaCard key={filename} filename={filename} index={index} />
+            {mediaFiles.map((filename) => (
+              <MediaCard key={filename} filename={filename} />
             ))}
 
           </div>
