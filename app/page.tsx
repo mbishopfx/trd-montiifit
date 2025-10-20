@@ -18,10 +18,10 @@ export default function Home() {
             src="/photos/montiifit_3317222096930872912_59842297436_2024-03-05.jpg"
             alt="Montana Tornatore Training"
             fill
-            className="object-cover opacity-25"
+            className="object-cover opacity-40"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#f5f5f5]/85 via-[#f5f5f5]/75 to-[#f5f5f5]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f5f5f5]/75 via-[#f5f5f5]/60 to-[#f5f5f5]" />
         </div>
 
         {/* Hero Content */}
