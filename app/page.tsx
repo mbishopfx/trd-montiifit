@@ -151,7 +151,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              What You'll Get
+              What You&apos;ll Get
             </h2>
             <p className="text-xl text-gray-600">
               Comprehensive coaching designed for maximum results
