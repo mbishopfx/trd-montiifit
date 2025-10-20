@@ -15,13 +15,13 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/photos/IMG_5056.jpg"
+            src="/photos/montiifit_3317222096930872912_59842297436_2024-03-05.jpg"
             alt="Montana Tornatore Training"
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-25"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#f5f5f5]/80 via-[#f5f5f5]/70 to-[#f5f5f5]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f5f5f5]/85 via-[#f5f5f5]/75 to-[#f5f5f5]" />
         </div>
 
         {/* Hero Content */}
@@ -35,9 +35,9 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="mb-6"
+            className="mb-8"
           >
-            <span className="inline-block px-6 py-2 bg-white border border-gray-200 rounded-full text-sm font-semibold tracking-wide shadow-sm" style={{ color: '#e8998d' }}>
+            <span className="inline-block px-8 py-3 bg-white border-2 border-gray-300 rounded-full text-xs font-black tracking-[0.2em] shadow-md uppercase" style={{ color: '#e8998d' }}>
               HYROX PRO ATHLETE & ELITE FITNESS COACH
             </span>
           </motion.div>
@@ -46,18 +46,19 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
+            className="text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-6 leading-[1.1] tracking-tight"
+            style={{ letterSpacing: '-0.02em' }}
           >
-            Transform Your Body,
+            TRANSFORM YOUR BODY,
             <br />
-            <span style={{ color: '#e8998d' }}>Elevate Your Performance</span>
+            <span style={{ color: '#e8998d' }}>ELEVATE YOUR PERFORMANCE</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-gray-700 mb-12 max-w-2xl mx-auto leading-relaxed font-medium"
           >
             Elite 1-on-1 coaching program designed for athletes who refuse to settle. 
             Build strength, endurance, and mental resilience with proven training systems.
@@ -73,14 +74,14 @@ export default function Home() {
               href="https://linktr.ee/montanatornatore"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-10 py-5 text-white text-lg font-bold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              className="px-12 py-5 text-white text-base font-black uppercase tracking-wider rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
               style={{ background: 'linear-gradient(135deg, #e8998d 0%, #d88579 100%)' }}
             >
               Apply for Coaching →
             </a>
             <Link
               href="/gallery"
-              className="px-10 py-5 bg-white text-gray-900 text-lg font-bold rounded-full border-2 border-gray-200 hover:border-[#e8998d] hover:shadow-lg transition-all duration-300"
+              className="px-12 py-5 bg-white text-gray-900 text-base font-black uppercase tracking-wider rounded-full border-2 border-gray-300 hover:border-[#e8998d] hover:shadow-xl transition-all duration-300"
             >
               View Gallery
             </Link>
@@ -90,7 +91,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.6 }}
-            className="mt-8 text-sm text-gray-500"
+            className="mt-8 text-sm font-bold text-gray-700 uppercase tracking-wider"
           >
             ⚡ Only 3 coaching spots available this month
           </motion.p>
@@ -108,9 +109,9 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="text-center p-8 rounded-2xl bg-gray-50 border border-gray-200 hover:shadow-lg transition-shadow"
             >
-              <div className="text-5xl font-bold mb-2" style={{ color: '#e8998d' }}>12+</div>
-              <div className="text-gray-900 font-semibold text-lg">Years Experience</div>
-              <div className="text-gray-600 text-sm mt-2">Elite Athletic Training</div>
+              <div className="text-6xl font-black mb-2" style={{ color: '#e8998d' }}>12+</div>
+              <div className="text-gray-900 font-black text-lg uppercase tracking-wide">Years Experience</div>
+              <div className="text-gray-600 text-sm mt-2 font-semibold">Elite Athletic Training</div>
             </motion.div>
 
             <motion.div
@@ -120,9 +121,9 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-center p-8 rounded-2xl bg-gray-50 border border-gray-200 hover:shadow-lg transition-shadow"
             >
-              <div className="text-5xl font-bold mb-2" style={{ color: '#e8998d' }}>100+</div>
-              <div className="text-gray-900 font-semibold text-lg">Athletes Coached</div>
-              <div className="text-gray-600 text-sm mt-2">Competition Ready Results</div>
+              <div className="text-6xl font-black mb-2" style={{ color: '#e8998d' }}>100+</div>
+              <div className="text-gray-900 font-black text-lg uppercase tracking-wide">Athletes Coached</div>
+              <div className="text-gray-600 text-sm mt-2 font-semibold">Competition Ready Results</div>
             </motion.div>
 
             <motion.div
@@ -132,9 +133,9 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-center p-8 rounded-2xl bg-gray-50 border border-gray-200 hover:shadow-lg transition-shadow"
             >
-              <div className="text-5xl font-bold mb-2" style={{ color: '#e8998d' }}>Pro</div>
-              <div className="text-gray-900 font-semibold text-lg">HYROX Athlete</div>
-              <div className="text-gray-600 text-sm mt-2">Elite Competition Level</div>
+              <div className="text-6xl font-black mb-2" style={{ color: '#e8998d' }}>PRO</div>
+              <div className="text-gray-900 font-black text-lg uppercase tracking-wide">HYROX Athlete</div>
+              <div className="text-gray-600 text-sm mt-2 font-semibold">Elite Competition Level</div>
             </motion.div>
           </div>
         </div>
@@ -150,10 +151,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-4 tracking-tight uppercase">
               What You&apos;ll Get
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-700 font-semibold">
               Comprehensive coaching designed for maximum results
             </p>
           </motion.div>
@@ -201,10 +202,10 @@ export default function Home() {
               >
                 <div className="text-4xl flex-shrink-0">{benefit.icon}</div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 uppercase tracking-wide">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 font-medium">
                     {benefit.description}
                   </p>
                 </div>
@@ -224,7 +225,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 tracking-tight uppercase">
               Who This Is For
             </h2>
           </motion.div>
@@ -256,10 +257,10 @@ export default function Home() {
                 className="text-center p-8 bg-gray-50 rounded-2xl border border-gray-200 hover:shadow-lg transition-all"
               >
                 <div className="text-5xl mb-4">{persona.emoji}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-lg font-black text-gray-900 mb-3 uppercase tracking-wide">
                   {persona.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 font-medium">
                   {persona.description}
                 </p>
               </motion.div>
@@ -277,24 +278,24 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto text-center bg-gradient-to-br from-white to-gray-50 rounded-3xl p-12 md:p-16 border border-gray-200 shadow-xl"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 tracking-tight uppercase leading-[1.1]">
             Ready to Start Your
             <br />
             <span style={{ color: '#e8998d' }}>Transformation?</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 mb-10 max-w-2xl mx-auto font-medium">
             Limited coaching spots available. Apply now to secure your spot and begin your journey to peak performance.
           </p>
           <a
             href="https://linktr.ee/montanatornatore"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-12 py-6 text-white text-xl font-bold rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+            className="inline-block px-14 py-6 text-white text-lg font-black uppercase tracking-wider rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
             style={{ background: 'linear-gradient(135deg, #e8998d 0%, #d88579 100%)' }}
           >
             Apply for Coaching Now
           </a>
-          <p className="mt-8 text-sm text-gray-500">
+          <p className="mt-8 text-sm font-bold text-gray-700 uppercase tracking-wider">
             ⚡ Only 3 spots remaining this month
           </p>
         </motion.div>
@@ -305,10 +306,10 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Montana <span style={{ color: '#e8998d' }}>Tornatore</span>
+              <h3 className="text-2xl font-black text-gray-900 mb-2 tracking-tight">
+                MONTANA <span style={{ color: '#e8998d' }}>TORNATORE</span>
               </h3>
-              <p className="text-gray-600">HYROX Pro | Elite Fitness Coach</p>
+              <p className="text-gray-600 font-semibold text-sm tracking-wide">HYROX PRO | ELITE FITNESS COACH</p>
             </div>
 
             <div className="flex flex-wrap justify-center gap-6">
