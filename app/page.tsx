@@ -151,10 +151,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-4 tracking-tight uppercase">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-4 tracking-tight uppercase px-2">
               What You&apos;ll Get
             </h2>
-            <p className="text-lg text-gray-700 font-semibold">
+            <p className="text-base sm:text-lg text-gray-700 font-semibold px-4">
               Comprehensive coaching designed for maximum results
             </p>
           </motion.div>
@@ -225,7 +225,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 tracking-tight uppercase">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 tracking-tight uppercase px-2">
               Who This Is For
             </h2>
           </motion.div>
@@ -270,32 +270,32 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-24 px-4">
+      <section className="py-16 sm:py-24 px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-center bg-gradient-to-br from-white to-gray-50 rounded-3xl p-12 md:p-16 border border-gray-200 shadow-xl"
+          className="max-w-4xl mx-auto text-center bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 sm:p-12 md:p-16 border border-gray-200 shadow-xl"
         >
-          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 tracking-tight uppercase leading-[1.1]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 tracking-tight uppercase leading-[1.1] px-2">
             Ready to Start Your
             <br />
             <span style={{ color: '#e8998d' }}>Transformation?</span>
           </h2>
-          <p className="text-lg text-gray-700 mb-10 max-w-2xl mx-auto font-medium">
+          <p className="text-base sm:text-lg text-gray-700 mb-10 max-w-2xl mx-auto font-medium px-2">
             Limited coaching spots available. Apply now to secure your spot and begin your journey to peak performance.
           </p>
           <a
             href="https://linktr.ee/montanatornatore"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-14 py-6 text-white text-lg font-black uppercase tracking-wider rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+            className="inline-block px-8 sm:px-12 md:px-14 py-5 sm:py-6 text-white text-sm sm:text-base md:text-lg font-black uppercase tracking-wider rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
             style={{ background: 'linear-gradient(135deg, #e8998d 0%, #d88579 100%)' }}
           >
             Apply for Coaching Now
           </a>
-          <p className="mt-8 text-sm font-bold text-gray-700 uppercase tracking-wider">
+          <p className="mt-8 text-xs sm:text-sm font-bold text-gray-700 uppercase tracking-wider px-2">
             ⚡ Only 3 spots remaining this month
           </p>
         </motion.div>
