@@ -11,7 +11,7 @@ export default function Home() {
       <HamburgerMenu />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 pt-24 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center px-2 sm:px-4 pt-20 sm:pt-24 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -35,9 +35,9 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="mb-8"
+            className="mb-8 px-4"
           >
-            <span className="inline-block px-8 py-3 bg-white border-2 border-gray-300 rounded-full text-xs font-black tracking-[0.2em] shadow-md uppercase" style={{ color: '#e8998d' }}>
+            <span className="inline-block px-4 sm:px-8 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-full text-[0.6rem] sm:text-xs font-black tracking-[0.15em] sm:tracking-[0.2em] shadow-md uppercase" style={{ color: '#e8998d' }}>
               HYROX PRO ATHLETE & ELITE FITNESS COACH
             </span>
           </motion.div>
@@ -46,7 +46,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-6 leading-[1.1] tracking-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-gray-900 mb-6 leading-[1.1] tracking-tight px-2"
             style={{ letterSpacing: '-0.02em' }}
           >
             TRANSFORM YOUR BODY,
@@ -58,7 +58,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="text-lg md:text-xl text-gray-700 mb-12 max-w-2xl mx-auto leading-relaxed font-medium"
+            className="text-base sm:text-lg md:text-xl text-gray-700 mb-12 max-w-2xl mx-auto leading-relaxed font-medium px-4"
           >
             Elite 1-on-1 coaching program designed for athletes who refuse to settle. 
             Build strength, endurance, and mental resilience with proven training systems.
@@ -74,14 +74,14 @@ export default function Home() {
               href="https://linktr.ee/montanatornatore"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-12 py-5 text-white text-base font-black uppercase tracking-wider rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="px-8 sm:px-12 py-4 sm:py-5 text-white text-sm sm:text-base font-black uppercase tracking-wider rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
               style={{ background: 'linear-gradient(135deg, #e8998d 0%, #d88579 100%)' }}
             >
               Apply for Coaching →
             </a>
             <Link
               href="/gallery"
-              className="px-12 py-5 bg-white text-gray-900 text-base font-black uppercase tracking-wider rounded-full border-2 border-gray-300 hover:border-[#e8998d] hover:shadow-xl transition-all duration-300"
+              className="px-8 sm:px-12 py-4 sm:py-5 bg-white text-gray-900 text-sm sm:text-base font-black uppercase tracking-wider rounded-full border-2 border-gray-300 hover:border-[#e8998d] hover:shadow-xl transition-all duration-300"
             >
               View Gallery
             </Link>
@@ -91,7 +91,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.6 }}
-            className="mt-8 text-sm font-bold text-gray-700 uppercase tracking-wider"
+            className="mt-8 text-xs sm:text-sm font-bold text-gray-700 uppercase tracking-wider px-4"
           >
             ⚡ Only 3 coaching spots available this month
           </motion.p>
