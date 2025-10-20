@@ -1,212 +1,353 @@
+'use client';
+
 import HamburgerMenu from '@/components/HamburgerMenu';
-import MediaCard from '@/components/MediaCard';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
-  // ALL 144 media files from Montana's Instagram
-  const mediaFiles = [
-    'montiifit_2986905494649137058_217453459_2022-12-06.jpg',
-    'montiifit_3109159849749501417_59842297436_2023-05-23.jpg',
-    'montiifit_3115973154693860800_59842297436_2023-06-02.mp4',
-    'montiifit_3139591111940384780_59842297436_2023-07-04.mp4',
-    'montiifit_3166697833171849934_59842297436_2023-08-11.mp4',
-    'montiifit_3179658192729403425_59842297436_2023-08-28.mp4',
-    'montiifit_3182403671299833562_59842297436_2023-09-01.mp4',
-    'montiifit_3220960764906568625_59842297436_2023-10-24.mp4',
-    'montiifit_3281954475140067536_59842297436_2024-01-17.mp4',
-    'montiifit_3285270206107815363_59842297436_2024-01-21.mp4',
-    'montiifit_3287505839647814685_59842297436_2024-01-24.mp4',
-    'montiifit_3303991106621566910_59842297436_2024-02-16.mp4',
-    'montiifit_3310083795989488283_59842297436_2024-02-24.mp4',
-    'montiifit_3312247896421381916_59842297436_2024-02-27.jpg',
-    'montiifit_3315213824892632024_59842297436_2024-03-03.mp4',
-    'montiifit_3317222096930872912_59842297436_2024-03-05.jpg',
-    'montiifit_3317833760882367321_59842297436_2024-03-06.mp4',
-    'montiifit_3320081473715594202_59842297436_2024-03-09.mp4',
-    'montiifit_3321485165556037171_59842297436_2024-03-11.mp4',
-    'montiifit_3324416397587472254_59842297436_2024-03-15.mp4',
-    'montiifit_3327601839304865124_59842297436_2024-03-20.mp4',
-    'montiifit_3328055385964156496_53176986663_2024-03-20.mp4',
-    'montiifit_3329378349514238932_59842297436_2024-03-22.mp4',
-    'montiifit_3330412130585227972_59842297436_2024-03-23.mp4',
-    'montiifit_3332591393501726498_59842297436_2024-03-26.mp4',
-    'montiifit_3338830286526571616_59842297436_2024-04-04.mp4',
-    'montiifit_3339806155852058690_59842297436_2024-04-05.mp4',
-    'montiifit_3343952095324277488_59842297436_2024-04-11.mp4',
-    'montiifit_3356295397054678973_59842297436_2024-04-28.jpg',
-    'montiifit_3356295397054678973_59842297436_2024-04-28.mp4',
-    'montiifit_3358382817866693417_59842297436_2024-05-01.mp4',
-    'montiifit_3363071918054538782_59842297436_2024-05-08.mp4',
-    'montiifit_3364250000656380443_59842297436_2024-05-09.mp4',
-    'montiifit_3368186557930470485_59842297436_2024-05-15.mp4',
-    'montiifit_3368530660501419904_59842297436_2024-05-15.mp4',
-    'montiifit_3378016858072504147_59842297436_2024-05-28.mp4',
-    'montiifit_3381546270835538938_59842297436_2024-06-02.mp4',
-    'montiifit_3381921540608129402_59842297436_2024-06-03.jpg',
-    'montiifit_3382406182603960008_59842297436_2024-06-03.mp4',
-    'montiifit_3383769195567298057_59842297436_2024-06-05.mp4',
-    'montiifit_3395722947496855759_59842297436_2024-06-22.mp4',
-    'montiifit_3418166827903278975_59842297436_2024-07-23.mp4',
-    'montiifit_3420066416239949695_217453459_2024-07-25.jpg',
-    'montiifit_3420764046653811515_217453459_2024-07-26.jpg',
-    'montiifit_3425864313975434479_59842297436_2024-08-02.mp4',
-    'montiifit_3428988942319502631_59842297436_2024-08-06.mp4',
-    'montiifit_3447611893218994191_59842297436_2024-09-01.jpg',
-    'montiifit_3455846022259074342_59842297436_2024-09-13.mp4',
-    'montiifit_3457007995571625843_59842297436_2024-09-14.mp4',
-    'montiifit_3462012413459161579_59842297436_2024-09-21.mp4',
-    'montiifit_3463487069726809597_59842297436_2024-09-23.mp4',
-    'montiifit_3465232078498654372_59842297436_2024-09-25.mp4',
-    'montiifit_3465697107988062971_59842297436_2024-09-26.mp4',
-    'montiifit_3467915002197626832_59842297436_2024-09-29.jpg',
-    'montiifit_3467915002197626832_59842297436_2024-09-29.mp4',
-    'montiifit_3473903145895308990_59842297436_2024-10-07.jpg',
-    'montiifit_3477258299588194669_59842297436_2024-10-12.mp4',
-    'montiifit_3480898851130877253_59842297436_2024-10-17.mp4',
-    'montiifit_3483101269692441430_59842297436_2024-10-20.mp4',
-    'montiifit_3483807485435340800_59842297436_2024-10-21.mp4',
-    'montiifit_3484078944690467394_59842297436_2024-10-21.mp4',
-    'montiifit_3492014700441241750_59842297436_2024-11-01.jpg',
-    'montiifit_3492554044582996760_59842297436_2024-11-02.mp4',
-    'montiifit_3503670558806276979_2254446228_2024-11-18.mp4',
-    'montiifit_3504170516891864898_59842297436_2024-11-18.jpg',
-    'montiifit_3514775412305499243_59842297436_2024-12-03.mp4',
-    'montiifit_3517249242534920682_217453459_2024-12-06.jpg',
-    'montiifit_3528154574374731857_217453459_2024-12-21.jpg',
-    'montiifit_3533315519501853394_26829666318_2024-12-28.mp4',
-    'montiifit_3534609234584720972_59842297436_2024-12-30.jpg',
-    'montiifit_3536784148033009116_59842297436_2025-01-02.mp4',
-    'montiifit_3537516075614670722_59842297436_2025-01-03.mp4',
-    'montiifit_3539810562982337694_59842297436_2025-01-06.jpg',
-    'montiifit_3541159862500982486_59842297436_2025-01-08.mp4',
-    'montiifit_3542103683551634159_59842297436_2025-01-10.mp4',
-    'montiifit_3544239606347277459_26829666318_2025-01-12.mp4',
-    'montiifit_3544728764217270744_26829666318_2025-01-13.mp4',
-    'montiifit_3545714430814812586_59842297436_2025-01-15.mp4',
-    'montiifit_3546189838774095899_59842297436_2025-01-15.mp4',
-    'montiifit_3548561582588654068_26829666318_2025-01-18.mp4',
-    'montiifit_3549330600625549744_26829666318_2025-01-20.mp4',
-    'montiifit_3551345861113683122_59842297436_2025-01-22.mp4',
-    'montiifit_3552771212373331208_59842297436_2025-01-24.mp4',
-    'montiifit_3556366390371593597_59842297436_2025-01-29.mp4',
-    'montiifit_3557165280368839475_59842297436_2025-01-30.mp4',
-    'montiifit_3559191670551142382_59842297436_2025-02-02.mp4',
-    'montiifit_3560007909188716136_26829666318_2025-02-03.mp4',
-    'montiifit_3561408609432329484_59842297436_2025-02-05.mp4',
-    'montiifit_3562049800066119254_59842297436_2025-02-06.mp4',
-    'montiifit_3564325680386221039_59842297436_2025-02-09.mp4',
-    'montiifit_3566046679082786171_59842297436_2025-02-12.mp4',
-    'montiifit_3566530079758441158_59842297436_2025-02-12.mp4',
-    'montiifit_3569644334673383650_59842297436_2025-02-17.jpg',
-    'montiifit_3569644334673383650_59842297436_2025-02-17.mp4',
-    'montiifit_3571077833024565549_59842297436_2025-02-19.mp4',
-    'montiifit_3575898179267757323_59842297436_2025-02-25.mp4',
-    'montiifit_3577571136700008620_59842297436_2025-02-27.jpg',
-    'montiifit_3578096613785718038_59842297436_2025-02-28.jpg',
-    'montiifit_3579473800996161664_59842297436_2025-03-02.mp4',
-    'montiifit_3580493980366924428_59842297436_2025-03-04.mp4',
-    'montiifit_3581727207766553181_56128886041_2025-03-05.jpg',
-    'montiifit_3583193367859066715_56128886041_2025-03-07.mp4',
-    'montiifit_3585370278668316238_26829666318_2025-03-10.mp4',
-    'montiifit_3586068833203616735_59842297436_2025-03-11.mp4',
-    'montiifit_3589921522131677862_59842297436_2025-03-17.jpg',
-    'montiifit_3589921522131677862_59842297436_2025-03-17.mp4',
-    'montiifit_3599946083033032260_59842297436_2025-03-30.jpg',
-    'montiifit_3601485423285760878_59842297436_2025-04-01.mp4',
-    'montiifit_3607347067018581366_59842297436_2025-04-10.jpg',
-    'montiifit_3617188025977770182_59842297436_2025-04-23.mp4',
-    'montiifit_3620175708006685822_59842297436_2025-04-27.jpg',
-    'montiifit_3620175708006685822_59842297436_2025-04-27.mp4',
-    'montiifit_3621662300105932409_59842297436_2025-04-29.jpg',
-    'montiifit_3622329400977620930_59842297436_2025-04-30.mp4',
-    'montiifit_3623031272914984018_59842297436_2025-05-01.mp4',
-    'montiifit_3631693077065151039_59842297436_2025-05-13.jpg',
-    'montiifit_3633160197997224099_59842297436_2025-05-15.mp4',
-    'montiifit_3635301235226529137_59842297436_2025-05-18.jpg',
-    'montiifit_3635301235226529137_59842297436_2025-05-18.mp4',
-    'montiifit_3636233017803289848_59842297436_2025-05-19.mp4',
-    'montiifit_3636719150505065269_59842297436_2025-05-20.mp4',
-    'montiifit_3642610351909361300_59842297436_2025-05-28.jpg',
-    'montiifit_3645545137766785557_59842297436_2025-06-01.mp4',
-    'montiifit_3645763883998892991_59842297436_2025-06-02.jpg',
-    'montiifit_3647141028301991688_59842297436_2025-06-03.mp4',
-    'montiifit_3650419757639817702_59842297436_2025-06-08.jpg',
-    'montiifit_3658511576437167960_59842297436_2025-06-19.jpg',
-    'montiifit_3689031347923937955_59842297436_2025-07-31.jpg',
-    'montiifit_3689031347923937955_59842297436_2025-07-31.mp4',
-    'montiifit_3689556948831947620_59842297436_2025-08-01.jpg',
-    'montiifit_3698327251918019876_67061999412_2025-08-13.mp4',
-    'montiifit_3702738228293718372_59842297436_2025-08-19.mp4',
-    'montiifit_3703381252057150653_59842297436_2025-08-20.mp4',
-    'montiifit_3709858341104572967_59842297436_2025-08-29.mp4',
-    'montiifit_3712944925441649853_59842297436_2025-09-02.mp4',
-    'montiifit_3713725119194589850_59842297436_2025-09-03.mp4',
-    'montiifit_3730149842254450318_59842297436_2025-09-26.mp4',
-    'montiifit_3732438331356527967_59842297436_2025-09-29.jpg',
-    'montiifit_3732438331356527967_59842297436_2025-09-29.mp4',
-    'montiifit_3735986371342299680_59842297436_2025-10-04.jpg',
-    'montiifit_3735986371342299680_59842297436_2025-10-04.mp4',
-    'montiifit_3738416378693642637_59842297436_2025-10-07.mp4',
-    'montiifit_3744095593153808919_59842297436_2025-10-15.mp4',
-    'montiifit_3745579097398015685_59842297436_2025-10-17.jpg',
-  ];
-
   return (
-    <>
+    <div className="min-h-screen bg-[#f5f5f5]">
       <HamburgerMenu />
       
-      {/* Main container - exactly like Next.js Conf */}
-      <div className="min-h-screen px-4 py-8 md:px-8">
-        <div className="max-w-[1600px] mx-auto">
-          {/* Masonry Grid */}
-          <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
-            
-            {/* Info Card - First item like Next.js Conf */}
-            <div className="break-inside-avoid bg-[#1a1a1a] rounded-xl p-8 md:p-12 border border-white/10">
-              {/* Montana's brand */}
-              <div className="mb-8">
-                <svg className="w-20 h-20 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/photos/IMG_5056.jpg"
+            alt="Montana Tornatore Training"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f5f5f5]/80 via-[#f5f5f5]/70 to-[#f5f5f5]" />
+        </div>
 
-              <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-                MONTANA TORNATORE
-              </h1>
+        {/* Hero Content */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative z-10 max-w-4xl mx-auto text-center"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="mb-6"
+          >
+            <span className="inline-block px-6 py-2 bg-white border border-gray-200 rounded-full text-sm font-semibold tracking-wide shadow-sm" style={{ color: '#e8998d' }}>
+              HYROX PRO ATHLETE & ELITE FITNESS COACH
+            </span>
+          </motion.div>
 
-              <p className="text-white/70 text-base md:text-lg leading-relaxed mb-8">
-                HYROX Pro athlete and elite fitness coach. From 1:40 to 1:16 — proven training strategies 
-                that took me to Pro Division. 8+ competitions across North America.
-              </p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
+          >
+            Transform Your Body,
+            <br />
+            <span style={{ color: '#e8998d' }}>Elevate Your Performance</span>
+          </motion.h1>
 
-              <a 
-                href="https://linktr.ee/montanatornatore" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="block w-full px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-white/90 transition-colors text-center"
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+          >
+            Elite 1-on-1 coaching program designed for athletes who refuse to settle. 
+            Build strength, endurance, and mental resilience with proven training systems.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <a
+              href="https://linktr.ee/montanatornatore"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-10 py-5 text-white text-lg font-bold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              style={{ background: 'linear-gradient(135deg, #e8998d 0%, #d88579 100%)' }}
+            >
+              Apply for Coaching →
+            </a>
+            <Link
+              href="/gallery"
+              className="px-10 py-5 bg-white text-gray-900 text-lg font-bold rounded-full border-2 border-gray-200 hover:border-[#e8998d] hover:shadow-lg transition-all duration-300"
+            >
+              View Gallery
+            </Link>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 0.6 }}
+            className="mt-8 text-sm text-gray-500"
+          >
+            ⚡ Only 3 coaching spots available this month
+          </motion.p>
+        </motion.div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center p-8 rounded-2xl bg-gray-50 border border-gray-200 hover:shadow-lg transition-shadow"
+            >
+              <div className="text-5xl font-bold mb-2" style={{ color: '#e8998d' }}>12+</div>
+              <div className="text-gray-900 font-semibold text-lg">Years Experience</div>
+              <div className="text-gray-600 text-sm mt-2">Elite Athletic Training</div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-center p-8 rounded-2xl bg-gray-50 border border-gray-200 hover:shadow-lg transition-shadow"
+            >
+              <div className="text-5xl font-bold mb-2" style={{ color: '#e8998d' }}>100+</div>
+              <div className="text-gray-900 font-semibold text-lg">Athletes Coached</div>
+              <div className="text-gray-600 text-sm mt-2">Competition Ready Results</div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-center p-8 rounded-2xl bg-gray-50 border border-gray-200 hover:shadow-lg transition-shadow"
+            >
+              <div className="text-5xl font-bold mb-2" style={{ color: '#e8998d' }}>Pro</div>
+              <div className="text-gray-900 font-semibold text-lg">HYROX Athlete</div>
+              <div className="text-gray-600 text-sm mt-2">Elite Competition Level</div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* What You'll Get Section */}
+      <section className="py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              What You'll Get
+            </h2>
+            <p className="text-xl text-gray-600">
+              Comprehensive coaching designed for maximum results
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                title: '1-on-1 Personalized Training',
+                description: 'Custom workout programs tailored to your goals, fitness level, and schedule.',
+                icon: '💪'
+              },
+              {
+                title: 'Nutrition Guidance',
+                description: 'Sustainable nutrition strategies that fuel performance and recovery.',
+                icon: '🥗'
+              },
+              {
+                title: 'Competition Preparation',
+                description: 'HYROX-specific training protocols used by pro athletes to dominate.',
+                icon: '🏆'
+              },
+              {
+                title: 'Weekly Check-ins',
+                description: 'Regular progress assessments and program adjustments for optimal results.',
+                icon: '📊'
+              },
+              {
+                title: 'Mental Performance',
+                description: 'Build the mindset and resilience needed for peak athletic performance.',
+                icon: '🧠'
+              },
+              {
+                title: '24/7 Support',
+                description: 'Direct access to coaching support whenever you need guidance or motivation.',
+                icon: '💬'
+              }
+            ].map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex gap-4 p-6 bg-white rounded-2xl border border-gray-200 hover:shadow-lg transition-all duration-300 hover:border-[#e8998d]"
               >
-                Apply for Coaching
-              </a>
+                <div className="text-4xl flex-shrink-0">{benefit.icon}</div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-gray-600">
+                    {benefit.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Transformation Section */}
+      <section className="py-24 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Who This Is For
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: 'Competitive Athletes',
+                description: 'Serious competitors preparing for HYROX, CrossFit, or endurance events.',
+                emoji: '🏃‍♀️'
+              },
+              {
+                title: 'Fitness Enthusiasts',
+                description: 'Dedicated individuals ready to take their training to the next level.',
+                emoji: '💫'
+              },
+              {
+                title: 'Transformation Seekers',
+                description: 'People committed to making a complete lifestyle and physique change.',
+                emoji: '🔥'
+              }
+            ].map((persona, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="text-center p-8 bg-gray-50 rounded-2xl border border-gray-200 hover:shadow-lg transition-all"
+              >
+                <div className="text-5xl mb-4">{persona.emoji}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {persona.title}
+                </h3>
+                <p className="text-gray-600">
+                  {persona.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-24 px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto text-center bg-gradient-to-br from-white to-gray-50 rounded-3xl p-12 md:p-16 border border-gray-200 shadow-xl"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Ready to Start Your
+            <br />
+            <span style={{ color: '#e8998d' }}>Transformation?</span>
+          </h2>
+          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+            Limited coaching spots available. Apply now to secure your spot and begin your journey to peak performance.
+          </p>
+          <a
+            href="https://linktr.ee/montanatornatore"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-12 py-6 text-white text-xl font-bold rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+            style={{ background: 'linear-gradient(135deg, #e8998d 0%, #d88579 100%)' }}
+          >
+            Apply for Coaching Now
+          </a>
+          <p className="mt-8 text-sm text-gray-500">
+            ⚡ Only 3 spots remaining this month
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 px-4 border-t border-gray-200 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Montana <span style={{ color: '#e8998d' }}>Tornatore</span>
+              </h3>
+              <p className="text-gray-600">HYROX Pro | Elite Fitness Coach</p>
             </div>
 
-            {/* All Media - Photos & Videos */}
-            {mediaFiles.map((filename) => (
-              <MediaCard key={filename} filename={filename} />
-            ))}
-
+            <div className="flex flex-wrap justify-center gap-6">
+              <a
+                href="https://www.instagram.com/montanatornatore/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-[#e8998d] transition-colors"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://linktr.ee/montanatornatore"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-[#e8998d] transition-colors"
+              >
+                Linktree
+              </a>
+              <a
+                href="mailto:coaching@montanatornatore.com"
+                className="text-gray-600 hover:text-[#e8998d] transition-colors"
+              >
+                Email
+              </a>
+            </div>
           </div>
 
-          {/* Footer */}
-          <div className="mt-16 text-center text-white/50 text-sm pb-8">
+          <div className="mt-8 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
             <p className="flex items-center justify-center gap-2">
               Built By{' '}
-              <a href="https://truerankdigital.com" target="_blank" rel="noopener noreferrer" className="text-red-400 hover:text-red-300 font-semibold">
+              <a href="https://truerankdigital.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#e8998d] font-semibold transition-colors">
                 True Rank Digital
               </a>{' '}
-              with <span className="text-red-500 animate-pulse">♥</span>
+              with <span className="text-[#e8998d]">♥</span>
             </p>
           </div>
         </div>
-      </div>
-    </>
+      </footer>
+    </div>
   );
 }

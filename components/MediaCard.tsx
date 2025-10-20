@@ -13,7 +13,14 @@ export default function MediaCard({ filename }: MediaCardProps) {
 
   return (
     <div 
-      className="break-inside-avoid rounded-xl overflow-hidden bg-[#1a1a1a] border border-white/10 hover:border-red-500/50 transition-colors cursor-pointer group"
+      className="break-inside-avoid rounded-xl overflow-hidden bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 cursor-pointer group"
+      style={{ borderColor: '#d0d0d0' }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = '#e8998d';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = '#d0d0d0';
+      }}
     >
       <div className="relative aspect-square">
         {isVideo ? (

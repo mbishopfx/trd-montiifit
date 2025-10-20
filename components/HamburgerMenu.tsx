@@ -11,9 +11,9 @@ const socialLinks = [
 ];
 
 const navLinks = [
-  { name: 'Gallery', href: '/' },
+  { name: 'Home', href: '/' },
+  { name: 'Gallery', href: '/gallery' },
   { name: 'Blog', href: '/blog' },
-  { name: 'About', href: '#about' },
   { name: 'Contact', href: '#contact' }
 ];
 
@@ -25,20 +25,24 @@ export default function HamburgerMenu() {
       {/* Hamburger Button - Fixed top right */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-6 right-6 z-50 glass-dark p-4 rounded-full hover:bg-white/10 transition-all duration-300 group"
+        className="fixed top-6 right-6 z-50 bg-white border border-gray-200 p-4 rounded-full hover:shadow-lg transition-all duration-300 group"
+        style={{ borderColor: '#d0d0d0' }}
       >
         <div className="w-6 h-5 relative flex flex-col justify-between">
           <motion.span
             animate={isOpen ? { rotate: 45, y: 9 } : { rotate: 0, y: 0 }}
-            className="w-full h-0.5 bg-white rounded-full transition-all"
+            className="w-full h-0.5 rounded-full transition-all"
+            style={{ background: '#e8998d' }}
           />
           <motion.span
             animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-            className="w-full h-0.5 bg-white rounded-full"
+            className="w-full h-0.5 rounded-full"
+            style={{ background: '#e8998d' }}
           />
           <motion.span
             animate={isOpen ? { rotate: -45, y: -9 } : { rotate: 0, y: 0 }}
-            className="w-full h-0.5 bg-white rounded-full transition-all"
+            className="w-full h-0.5 rounded-full transition-all"
+            style={{ background: '#e8998d' }}
           />
         </div>
       </button>
@@ -53,7 +57,7 @@ export default function HamburgerMenu() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black/80 backdrop-blur-md z-40"
+              className="fixed inset-0 bg-black/30 backdrop-blur-md z-40"
             />
 
             {/* Menu Panel */}
@@ -62,23 +66,23 @@ export default function HamburgerMenu() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-full sm:w-96 glass-dark border-l border-white/10 z-40 overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 w-full sm:w-96 bg-white border-l border-gray-200 z-40 overflow-y-auto shadow-2xl"
             >
               <div className="p-8 pt-24">
                 {/* Brand */}
                 <div className="mb-12">
-                  <h2 className="text-3xl font-bold text-white mb-2">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-2">
                     Montana
-                    <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-                      Tornatore
+                    <span style={{ color: '#e8998d' }}>
+                      {' '}Tornatore
                     </span>
                   </h2>
-                  <p className="text-white/60 text-sm">HYROX Pro | Fitness Coach</p>
+                  <p className="text-gray-600 text-sm">HYROX Pro | Fitness Coach</p>
                 </div>
 
                 {/* Navigation Links */}
                 <div className="mb-12">
-                  <h3 className="text-sm font-bold text-white/40 uppercase tracking-wider mb-4">
+                  <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">
                     Navigation
                   </h3>
                   <nav className="space-y-2">
@@ -87,7 +91,7 @@ export default function HamburgerMenu() {
                         key={link.href}
                         href={link.href}
                         onClick={() => setIsOpen(false)}
-                        className="block text-lg text-white/80 hover:text-white hover:bg-white/5 rounded-lg px-4 py-3 transition-all duration-200"
+                        className="block text-lg text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg px-4 py-3 transition-all duration-200"
                       >
                         {link.name}
                       </Link>
@@ -97,7 +101,7 @@ export default function HamburgerMenu() {
 
                 {/* Social Links */}
                 <div className="mb-12">
-                  <h3 className="text-sm font-bold text-white/40 uppercase tracking-wider mb-4">
+                  <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">
                     Connect
                   </h3>
                   <div className="space-y-2">
@@ -107,7 +111,7 @@ export default function HamburgerMenu() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-white/80 hover:text-white hover:bg-white/5 rounded-lg px-4 py-3 transition-all duration-200"
+                        className="flex items-center gap-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg px-4 py-3 transition-all duration-200"
                       >
                         <span className="text-2xl">{link.icon}</span>
                         <span>{link.name}</span>
@@ -117,26 +121,27 @@ export default function HamburgerMenu() {
                 </div>
 
                 {/* CTA */}
-                <div className="glass rounded-2xl p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">
+                <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
                     Ready to Transform?
                   </h3>
-                  <p className="text-white/60 text-sm mb-4">
+                  <p className="text-gray-600 text-sm mb-4">
                     Only 3 coaching spots available this month.
                   </p>
                   <a 
                     href="https://linktr.ee/montanatornatore" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block w-full py-3 bg-gradient-to-r from-red-600 to-orange-600 text-white font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-center"
+                    className="block w-full py-3 text-white font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-center"
+                    style={{ background: 'linear-gradient(135deg, #e8998d 0%, #d88579 100%)' }}
                   >
                     Apply Now
                   </a>
                 </div>
 
                 {/* Discount Codes */}
-                <div className="mt-6 glass rounded-2xl p-6">
-                  <h3 className="text-sm font-bold text-white/80 mb-3">
+                <div className="mt-6 bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                  <h3 className="text-sm font-bold text-gray-900 mb-3">
                     Exclusive Discounts
                   </h3>
                   <div className="space-y-3 text-xs">
@@ -144,10 +149,10 @@ export default function HamburgerMenu() {
                       href="https://hyrox.com" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between hover:bg-white/5 p-2 rounded transition-colors"
+                      className="flex items-center justify-between hover:bg-white p-2 rounded transition-colors"
                     >
-                      <span className="text-white/60">HYROX Registration</span>
-                      <code className="text-red-400 font-mono bg-black/30 px-2 py-1 rounded">
+                      <span className="text-gray-600">HYROX Registration</span>
+                      <code className="font-mono px-2 py-1 rounded" style={{ color: '#e8998d', background: '#fef5f3' }}>
                         MONTANA-10
                       </code>
                     </a>
@@ -155,10 +160,10 @@ export default function HamburgerMenu() {
                       href="https://oneractive.com" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between hover:bg-white/5 p-2 rounded transition-colors"
+                      className="flex items-center justify-between hover:bg-white p-2 rounded transition-colors"
                     >
-                      <span className="text-white/60">Oner Active Gear</span>
-                      <code className="text-red-400 font-mono bg-black/30 px-2 py-1 rounded">
+                      <span className="text-gray-600">Oner Active Gear</span>
+                      <code className="font-mono px-2 py-1 rounded" style={{ color: '#e8998d', background: '#fef5f3' }}>
                         $10 OFF
                       </code>
                     </a>
