@@ -31,20 +31,20 @@ export default function BlogPage() {
     <>
       <HamburgerMenu />
       
-      <div className="min-h-screen px-4 py-20">
+      <div className="min-h-screen bg-[#f5f5f5] px-4 py-20">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="mb-16 text-center">
-            <Link href="/" className="text-white/60 hover:text-white mb-4 inline-block">
-              ← Back to Gallery
+            <Link href="/" className="text-gray-600 hover:text-gray-900 mb-6 inline-block font-semibold transition-colors">
+              ← Back to Home
             </Link>
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+            <h1 className="text-5xl md:text-6xl font-black text-gray-900 mb-4 tracking-tight uppercase">
               Training{' '}
-              <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
+              <span style={{ color: '#e8998d' }}>
                 Blog
               </span>
             </h1>
-            <p className="text-xl text-white/70">
+            <p className="text-lg text-gray-600 font-semibold">
               Insights from the Pro Division
             </p>
           </div>
@@ -55,18 +55,18 @@ export default function BlogPage() {
               <Link
                 key={post.id}
                 href={`/blog/${post.slug}`}
-                className="block glass-dark rounded-2xl p-8 hover:bg-white/10 transition-all duration-300"
+                className="block bg-white rounded-2xl p-8 border border-gray-200 hover:border-[#e8998d] hover:shadow-xl transition-all duration-300"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <h2 className="text-2xl font-bold text-white">
+                <div className="flex items-start justify-between mb-4 gap-4">
+                  <h2 className="text-2xl font-black text-gray-900 uppercase tracking-tight">
                     {post.title}
                   </h2>
-                  <span className="text-red-400 text-sm">{post.date}</span>
+                  <span className="text-sm font-bold shrink-0" style={{ color: '#e8998d' }}>{post.date}</span>
                 </div>
-                <p className="text-white/70 mb-4">
+                <p className="text-gray-600 mb-4 font-medium">
                   {post.excerpt}
                 </p>
-                <span className="text-red-500 font-semibold hover:text-red-400">
+                <span className="font-black uppercase tracking-wider text-sm" style={{ color: '#e8998d' }}>
                   Read More →
                 </span>
               </Link>
@@ -74,8 +74,8 @@ export default function BlogPage() {
           </div>
 
           {/* Coming Soon */}
-          <div className="mt-12 glass-dark rounded-2xl p-8 text-center">
-            <p className="text-white/60">
+          <div className="mt-12 bg-gray-50 rounded-2xl p-8 text-center border border-gray-200">
+            <p className="text-gray-600 font-medium">
               More articles coming soon. Follow me on Instagram for daily training tips.
             </p>
           </div>
